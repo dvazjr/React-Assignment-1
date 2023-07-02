@@ -1,18 +1,13 @@
-function Card(props) {
-  const name = props.Character.name;
-  const nickname = props.Character.nickName ?? null;
-  const photo = props.Character.imageUrl;
-  const alt = props.Character.alt;
-  const text = props.Character.background;
+function Card({character: {name, nickName, imageUrl, alt, background}}) {
   
   return (
     <div className="card">
       <div className="card-titles">
         <h3>{name}</h3>
-        <h4>{nickname}</h4>
+        <h4>{nickName ?? null}</h4>
       </div>
-      <img src={photo} alt={alt} />
-      <p>{text}</p>
+      <img src={imageUrl} alt={alt} />
+      <p>{background}</p>
     </div>
   );
 }

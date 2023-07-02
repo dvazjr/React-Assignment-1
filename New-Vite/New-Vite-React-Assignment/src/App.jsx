@@ -2,7 +2,7 @@ import React from "react";
 import NavButton from "./Components/button";
 import { data } from "../public/fma-data";
 import Card from "./Components/card";
-import Table from "./Components/table";
+import Rows from "./Components/Rows";
 
 function App() {
   const namesArray = ["About us", "Info", "Support Us"];
@@ -29,15 +29,15 @@ function App() {
                 <th key={index}>{title}</th>
               ))}
             </tr>
-            {topFiveCharacters.map((Character, index) => (
-              <Table Character={Character} rowIndex={index} />
+            {topFiveCharacters.map((character, index) => (
+              <Rows character={character} rowIndex={index} />
             ))}
           </tbody>
         </table>
       </section>
       <section id="character-cards">
-        {data.map((Character, index) => (
-          <Card Character={Character} key={index} />
+        {data.map((character, index) => (
+          <Card character={character} key={index} />
         ))}
       </section>
     </>
